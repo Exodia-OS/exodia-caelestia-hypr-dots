@@ -1,147 +1,118 @@
-# caelestia
+# 🌟 Exodia OS Caelestia Hyprland Configuration
 
-This is the main repo of the caelestia dots and contains the user configs for
-apps. This repo also includes an install script to install the entire dots.
+A beautiful, modern, and highly customizable Hyprland desktop environment configuration for Exodia OS, featuring a celestial-inspired theme with smooth animations and intuitive workflows.
 
-## Installation
+## ✨ Features
 
-Simply clone this repo and run the install script (you need
-[`fish`](https://github.com/fish-shell/fish-shell) installed).
+- **Modern Hyprland Setup**: Optimized configuration for smooth performance
+- **Celestial Theme**: Beautiful dark theme with cosmic aesthetics
+- **Fish Shell Integration**: Enhanced shell experience with starship prompt
+- **Application Configurations**: Pre-configured settings for popular applications
+- **Wallpaper Collection**: Curated wallpapers to match the theme
+- **Easy Installation**: Simple installation via Exodia OS package manager
 
-> [!WARNING]
-> The install script symlinks all configs into place, so you CANNOT
-> move/remove the repo folder once you run the install script. If
-> you do, most apps will not behave properly and some (e.g. Hyprland)
-> will fail to start completely. I recommend cloning the repo to
-> `~/.local/share/caelestia`.
+## 📦 Installation
 
-The install script has some options for installing configs for some apps.
+### Via Exodia OS Package Manager
 
-```
-$ ./install.fish -h
-usage: ./install.sh [-h] [--noconfirm] [--spotify] [--vscode] [--discord] [--paru]
-
-options:
-  -h, --help                  show this help message and exit
-  --noconfirm                 do not confirm package installation
-  --spotify                   install Spotify (Spicetify)
-  --vscode=[codium|code]      install VSCodium (or VSCode)
-  --discord                   install Discord (OpenAsar + Equicord)
-  --zen                       install Zen browser
-  --paru                      use paru instead of yay as AUR helper
+```bash
+update
+install exodia-caelestia-hypr-dots
 ```
 
-For example:
+## 🎨 Showcase
 
-```sh
-git clone https://github.com/caelestia-dots/caelestia.git ~/.local/share/caelestia
-~/.local/share/caelestia/install.fish
+<div align="center">
+  <img src="./showcase/0.png" alt="Desktop Overview" width="800"/>
+  <img src="./showcase/1.png" alt="Application Layout" width="800"/>
+  <img src="./showcase/2.png" alt="Terminal Theme" width="800"/>
+  <img src="./showcase/3.png" alt="System Information" width="800"/>
+  <img src="./showcase/4.png" alt="Customization Options" width="800"/>
+</div>
+
+## ⌨️ Keybindings
+
+### Navigation
+- `Super` - Open launcher
+- `Super` + `#` - Switch to workspace `#`
+- `Super` + `Alt` + `#` - Move window to workspace `#`
+- `Super` + `S` - Toggle special workspace or close current special workspace
+
+### Applications
+- `Super` + `T` - Open terminal (foot)
+- `Super` + `W` - Open browser (zen)
+- `Super` + `C` - Open IDE (vscodium)
+
+### System
+- `Ctrl` + `Alt` + `Delete` - Open session menu
+- `Ctrl` + `Super` + `Space` - Toggle media play state
+- `Ctrl` + `Super` + `Alt` + `R` - Restart the shell
+- `Ctrl` + `Shift` + `Q` - Quit Hyprland
+
+> 📖 **Full Documentation**: The [keybinding.md](keybinding.md) file contains detailed information about all 190+ keyboard shortcuts, including workspace navigation, window management, media controls, utilities, and special workspaces.
+
+## 📁 Configuration Structure
+
+The package installs configurations for the following applications:
+
+```
+~/.config/
+├── hypr/          # Hyprland configuration
+├── foot/          # Terminal emulator config
+├── fish/          # Fish shell configuration
+├── fastfetch/     # System info display
+├── btop/          # System monitor
+├── uwsm/          # Session manager
+└── starship.toml  # Shell prompt configuration
+
+~/Pictures/Wallpapers/
+└── Wallpapers/    # Curated wallpaper collection
 ```
 
-### Manual installation
+## 🔄 Updates
 
-Dependencies:
+To update your configuration:
 
--   hyprland
--   xdg-desktop-portal-hyprland
--   xdg-desktop-portal-gtk
--   hyprpicker
--   hypridle
--   wl-clipboard
--   cliphist
--   bluez-utils
--   inotify-tools
--   app2unit
--   wireplumber
--   trash-cli
--   foot
--   fish
--   fastfetch
--   starship
--   btop
--   jq
--   socat
--   imagemagick
--   curl
--   adw-gtk-theme
--   papirus-icon-theme
--   qt5ct-kde
--   qt6ct-kde
--   ttf-jetbrains-mono-nerd
-
-Install all dependencies and follow the installation guides of the
-[shell](https://github.com/caelestia-dots/shell) and [cli](https://github.com/caelestia-dots/cli)
-to install them.
-
-> [!TIP]
-> If on Arch or an Arch-based distro, there is a meta package available in the AUR
-> that pulls in all dependencies (`caelestia-meta`).
-
-Then copy or symlink the `hypr`, `foot`, `fish`, `fastfetch`, `uwsm` and `btop` folders to the
-`$XDG_CONFIG_HOME` (usually `~/.config`) directory. e.g. `hypr -> ~/.config/hypr`.
-Copy `starship.toml` to `$XDG_CONFIG_HOME/starship.toml`.
-
-#### Installing Spicetify configs:
-
-Follow the Spicetify [installation instructions](https://spicetify.app/docs/advanced-usage/installation),
-copy or symlink the `spicetify` folder to `$XDG_CONFIG_HOME/spicetify` and run
-
-```sh
-spicetify config current_theme caelestia color_scheme caelestia custom_apps marketplace
-spicetify apply
+```bash
+update
+upgrade exodia-caelestia-hypr-dots
 ```
 
-#### Installing VSCode/VSCodium configs:
+## 🐛 Troubleshooting
 
-Install VSCode or VSCodium, then copy or symlink `vscode/settings.json` and
-`vscode/keybindings.json` into the `$XDG_CONFIG_HOME/Code/User` (or `$XDG_CONFIG_HOME/VSCodium/User`
-if using VSCodium) folder. Then copy or symlink `vscode/flags.conf` to `$XDG_CONFIG_HOME/code-flags.conf`
-(or `$XDG_CONFIG_HOME/codium-flags.conf` if using VSCodium).
+### Common Issues
 
-Finally, install the extension VSIX from `vscode/caelestia-vscode-integration`.
+1. **Hyprland won't start**: Ensure all dependencies are installed and check the logs with `journalctl -u hyprland`
 
-```sh
-# Use `codium` if using VSCodium
-code --install-extension vscode/caelestia-vscode-integration/caelestia-vscode-integration-*.vsix
-```
+2. **Applications not themed**: Make sure GTK and Qt themes are properly configured:
+   ```bash
+   gsettings set org.gnome.desktop.interface gtk-theme 'adw-gtk3'
+   qt5ct # Configure Qt5 theme
+   qt6ct # Configure Qt6 theme
+   ```
 
-#### Installing Zen Browser configs:
+3. **Permissions issues**: Ensure your user is in the correct groups:
+   ```bash
+   sudo usermod -a -G audio,video,input,seat $USER
+   ```
 
-Install Zen Browser, then copy or symlink `zen/userChrome.css` to the `chrome` folder in your
-profile of choice in `~/.zen`. e.g. `zen/userChrome.css -> ~/.zen/<profile>/chrome/userChrome.css`.
+## 🤝 Contributing
 
-Now install the native app by copying `zen/native_app/manifest.json` to
-`~/.mozilla/native-messaging-hosts/caelestiafox.json` and replacing the `{{ $lib }}` string in it
-with the absolute path of `~/.local/lib/caelestia` (this must be the absolute path, e.g.
-`/home/user/.local/lib/caelestia`). Then copy or symlink `zen/native_app/app.fish` to
-`~/.local/lib/caelestia/caelestiafox`.
+Contributions are welcome! Please feel free to submit issues, feature requests, or pull requests.
 
-Finally, install the CaelestiaFox extension from [here](https://addons.mozilla.org/en-US/firefox/addon/caelestiafox).
+## 📄 License
 
-## Updating
+This project is licensed under the GPL-3.0 License - see the [LICENSE](LICENSE) file for details.
 
-Simply run `yay` to update the AUR packages, then `cd` into the repo directory and run `git pull` to update the configs.
+## 👨‍💻 Author
 
-## Usage
+**Mahmoud Mohamed (00xWolf)**
+- GitHub: [@mmsaeed509](https://github.com/mmsaeed509)
+- Email: mmsaeed509@gmail.com
+- credits [**`caelestia-dots`**](https://github.com/caelestia-dots/caelestia)
 
-> [!NOTE]
-> These dots do not contain a login manager (for now), so you must install a
-> login manager yourself unless you want to log in from a TTY. I recommend
-> [`greetd`](https://sr.ht/~kennylevinsen/greetd) with
-> [`tuigreet`](https://github.com/apognu/tuigreet), however you can use
-> any login manager you want.
+---
 
-There aren't really any usage instructions... these are a set of dotfiles.
-
-Here's a list of useful keybinds though:
-
--   `Super` - open launcher
--   `Super` + `#` - switch to workspace `#`
--   `Super` `Alt` + `#` - move window to workspace `#`
--   `Super` + `T` - open terminal (foot)
--   `Super` + `W` - open browser (zen)
--   `Super` + `C` - open IDE (vscodium)
--   `Super` + `S` - toggle special workspace or close current special workspace
--   `Ctrl` `Alt` + `Delete` - open session menu
--   `Ctrl` `Super` + `Space` - toggle media play state
--   `Ctrl` `Super` `Alt` + `R` - restart the shell
+<div align="center">
+  Made with ❤️ for the Exodia OS community
+</div>

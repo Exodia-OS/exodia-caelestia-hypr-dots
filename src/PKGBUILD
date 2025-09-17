@@ -1,0 +1,43 @@
+#
+# Maintainer: Mahmoud Mohamed (00xWolf) <mmsaeed509@gmail.com> , <https://github.com/mmsaeed509>
+#
+
+pkgname='exodia-caelestia-hypr-dots'
+pkgver=1.0
+pkgrel=1
+pkgdesc='A metapackage containing all dependencies for the Caelestia dotfiles'
+arch=('any')
+url='https://github.com/mmsaeed509/exodia-caelestia-hypr-dots'
+license=('GPL-3.0-only')
+install=${pkgname}.install
+
+depends=(
+    'exodia-caelestia-cli' 'exodia-caelestia-shell' 'ttf-jetbrains-mono-nerd'
+    'hyprland' 'xdg-desktop-portal-gtk'  'btop' 'qt6ct-kde' 'curl'
+    'wl-clipboard' 'cliphist' 'bluez-utils' 'inotify-tools' 'app2unit' 
+    'foot' 'fish' 'fastfetch' 'starship' 'wireplumber' 'jq' 'socat'
+    'adw-gtk-theme' 'papirus-icon-theme' 'qt5ct' 'hyprpicker'
+    'xdg-desktop-portal-hyprland' 'trash-cli' 'hypridle' 'imagemagick'
+)
+
+prepare() {
+
+	cp -af ../config/. ${srcdir}
+
+}
+
+
+package() {
+
+	local CONFIG_DIR=${pkgdir}/etc/skel/.config/${pkgname}
+	
+
+	mkdir -p "${CONFIG_DIR}"
+
+	cp -r ${srcdir}/*	"${CONFIG_DIR}"
+
+	chmod +x "${CONFIG_DIR}"/fish/*
+	chmod +x "${CONFIG_DIR}"/fish/functions/*
+	chmod +x "${CONFIG_DIR}"/hypr/scripts/*
+	
+}
