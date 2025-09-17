@@ -245,3 +245,4 @@ hyprctl reload
 <div align="center">
   <strong>Made with ❤️ for the Exodia OS Caelestia community</strong>
 </div>
+
