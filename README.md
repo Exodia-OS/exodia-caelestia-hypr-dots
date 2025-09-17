@@ -40,8 +40,8 @@ install exodia-caelestia-hypr-dots
 
 ### Applications
 - `Super` + `T` - Open terminal (foot)
-- `Super` + `W` - Open browser (zen)
-- `Super` + `C` - Open IDE (vscodium)
+- `Super` + `W` - Open browser (Brave)
+- `Super` + `C` - Open IDE (Cursor)
 
 ### System
 - `Ctrl` + `Alt` + `Delete` - Open session menu
