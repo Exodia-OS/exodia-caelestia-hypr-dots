@@ -7,7 +7,7 @@ pkgver=1.0
 pkgrel=2
 pkgdesc='A metapackage containing all dependencies for the Caelestia dotfiles'
 arch=('any')
-url='https://github.com/mmsaeed509/exodia-caelestia-hypr-dots'
+url='https://github.com/Exodia-OS/exodia-caelestia-hypr-dots'
 license=('GPL-3.0-only')
 install=${pkgname}.install
 
