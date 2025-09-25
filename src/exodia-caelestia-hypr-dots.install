@@ -93,6 +93,7 @@ INSTALL (){
     chown -R ${USER}:${GROUB} ${CONFIG_DIR}/btop
     chown -R ${USER}:${GROUB} ${CONFIG_DIR}/uwsm
     chown -R ${USER}:${GROUB} ${CONFIG_DIR}/starship.toml
+	chown -R ${USER}:${GROUB} ${CONFIG_DIR_WALLPAPERS}
 
 	
 	# Verify required dirs/files exist

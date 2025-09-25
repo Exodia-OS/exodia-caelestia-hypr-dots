@@ -4,7 +4,7 @@
 
 pkgname='exodia-caelestia-hypr-dots'
 pkgver=1.0
-pkgrel=2
+pkgrel=3
 pkgdesc='A metapackage containing all dependencies for the Caelestia dotfiles'
 arch=('any')
 url='https://github.com/Exodia-OS/exodia-caelestia-hypr-dots'
